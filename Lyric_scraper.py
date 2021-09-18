@@ -7,7 +7,4 @@ artist_name = input("What artist do you want? ")
 song_title = input("What song are you looking for? ")
 
 song = genius.search_song(song_title, artist_name)
-file.write(song.lyrics + "\n End of Lyrics")
-
-
-
+file.write(song.lyrics + "\nEnd of Lyrics")
