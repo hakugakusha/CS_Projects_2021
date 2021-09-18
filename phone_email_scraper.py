@@ -2,15 +2,11 @@ import re
 text = open("arkansas_tech_u_directory.txt", "r").read()
 
 phoneRegex = re.compile(r'''
-(
-((\d\d\d)|(\(\d\d\d\)))? 
-(\s|-)
-\d\d\d
--
-\d\d\d\d
-(((ext(\.)?\s)|x) 
- (\d{2,5}))?
-)
+(?:\d{3}-)
+{2}\d{4}
+(?: 
+(?:ext\.|x)
+\d{2,5})?
 ''', re.VERBOSE)
 
 emailRegex = re.compile(r'''
@@ -32,6 +28,3 @@ for email in extractedEmail:
 
 print(allEmails)
 print(allPhoneNumbers)
-
-
-
